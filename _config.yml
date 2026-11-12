@@ -1,0 +1,11 @@
+# SurroMother.com on GitHub Pages (free plan, branch main, folder /).
+# The site is pre-built to plain HTML by build.py; Jekyll only copies files.
+# Folders starting with "_" (such as _src) are never published.
+title: SurroMother
+exclude:
+  - README.md
+  - PROMPTS.md
+  - RESEARCH.md
+  - build.py
+  - requirements.txt
+  - automation
