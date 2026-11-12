@@ -1,9 +1,10 @@
 # SurroMother.com: built by GitHub Pages itself (free plan, branch main, folder /).
-# For the custom domain set url: "https://surromother.com" and baseurl: "".
+# Custom domain (CNAME file): surromother.com. Without the domain, use
+# url: "https://webworksa1.github.io" and baseurl: "/surromother-com".
 title: SurroMother
 tagline: The independent surrogacy navigator
-url: "https://webworksa1.github.io"
-baseurl: "/surromother-com"
+url: "https://surromother.com"
+baseurl: ""
 owner_contact: "https://web.works/contact"
 law_reviewed: "12 November 2026"
 plugins:
