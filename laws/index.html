@@ -1,0 +1,69 @@
+---
+layout: default
+title: "Surrogacy laws by country: global law tracker"
+description: "Is surrogacy legal? Filter 48 countries by status, region and access for foreign intended parents. Compensation rules, same-sex and single parents, parentage and the latest 2025-2026 changes."
+section: "Laws"
+section_url: "/laws/"
+crumb: "Global law tracker"
+ads: true
+sticky_cta: true
+---
+{% assign cs = site.data.countries.countries %}
+{% assign labels = site.data.countries.status_labels %}
+<section class="wrap page-head">
+  <p class="eyebrow">Global law tracker &middot; reviewed {{ site.law_reviewed }}</p>
+  <h1>Surrogacy laws by country</h1>
+  <p class="lede">Where surrogacy is allowed, for whom, and what can be paid. Filter the table, open a country for details and sources, or compare up to three side by side.</p>
+</section>
+
+<section class="wrap" data-filter-table>
+  <ul class="legend">
+    {% for pair in labels %}{% assign n = cs | where: "status", pair[0] | size %}
+    <li><a class="chip" href="{{ '/laws/' | relative_url }}?status={{ pair[0] }}"><span class="dot st-{{ pair[0] }}"></span>{{ pair[1] }} ({{ n }})</a></li>
+    {% endfor %}
+  </ul>
+  <div class="filters">
+    <label>Search<input type="search" placeholder="Country, law, keyword" data-f-q></label>
+    <label>Status<select data-f-status><option value="">All statuses</option>{% for pair in labels %}<option value="{{ pair[0] }}">{{ pair[1] }}</option>{% endfor %}</select></label>
+    {% assign regions = cs | map: "region" | uniq | sort %}
+    <label>Region<select data-f-region><option value="">All regions</option>{% for r in regions %}<option>{{ r }}</option>{% endfor %}</select></label>
+    <label class="check" style="margin:0 0 12px"><input type="checkbox" data-f-foreign> <span>Open to foreign intended parents</span></label>
+  </div>
+  <p class="count-line" data-f-count></p>
+  <div class="table-wrap"><table class="law-table">
+    <thead><tr><th>Country</th><th>Status</th><th>Paying a surrogate</th><th>Foreign parents</th><th>Same-sex couples</th><th>Singles</th><th>Risk</th></tr></thead>
+    <tbody>
+    {% assign sorted = cs | sort: "name" %}{% for c in sorted %}{% assign f3 = c.foreigners | slice: 0, 3 %}
+    <tr data-status="{{ c.status }}" data-region="{{ c.region }}" data-foreign="{% if f3 == 'Yes' %}1{% else %}0{% endif %}">
+      <td><a href="{{ '/laws/' | append: c.slug | append: '.html' | relative_url }}">{{ c.name }}</a></td>
+      <td><span class="badge st-{{ c.status }}">{{ labels[c.status] }}</span></td><td>{{ c.compensation }}</td><td>{{ c.foreigners }}</td><td>{{ c.same_sex }}</td><td>{{ c.singles }}</td><td>{{ c.risk }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+  </table></div>
+  <p class="btn-row"><a class="btn btn-plum" href="{{ '/tools/compare.html' | relative_url }}">Compare countries</a><a class="btn btn-line" href="{{ '/laws/us-states.html' | relative_url }}">US state guide</a></p>
+</section>
+
+<section class="wrap section" id="changes">
+  <h2>Recent changes</h2>
+  <p>Surrogacy law is moving fast. The newest changes we track, most recent first:</p>
+  <ul class="news-list">
+    {% assign rec = cs | sort: "recent_date" | reverse %}{% for c in rec %}{% if c.recent_date != "" %}
+    <li><time>{{ c.recent_month }}</time><div><a href="{{ '/laws/' | append: c.slug | append: '.html' | relative_url }}">{{ c.name }}</a><span class="src">{{ c.recent }}</span></div></li>
+    {% endif %}{% endfor %}
+  </ul>
+  <aside class="note note-info"><p><strong>Global picture:</strong> In March 2026 the Hague Conference on Private International Law paused its long-running work on an international surrogacy convention, and in October 2026 UN experts called for the effort to stop. Cross-border families should expect country-by-country rules for the foreseeable future.</p></aside>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <h2>How to read this tracker</h2>
+    <div class="grid-3">
+      {% for pair in labels %}<div class="card"><p><span class="badge st-{{ pair[0] }}">{{ pair[1] }}</span></p><p class="mb0">{{ site.data.countries.status_explain[pair[0]] }}</p></div>
+      {% endfor %}
+    </div>
+    <p class="small" style="margin-top:18px">This tracker summarises public sources for orientation only. It is not legal advice. Always confirm with a lawyer licensed in each jurisdiction involved. <a href="{{ '/contact.html' | relative_url }}?topic=law-update">Report a change</a>.</p>
+  </div>
+</section>
+
+{% include lead-parents.html %}
