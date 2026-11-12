@@ -1,0 +1,26 @@
+---
+layout: default
+title: Compare surrogacy laws between countries
+description: 'Compare surrogacy law side by side for up to three countries: status, payment rules, foreign access, same-sex and single parents, parentage, latest changes, risk and cost.'
+section: Tools
+section_url: /tools/
+crumb: Compare countries
+ads: true
+sticky_cta: true
+scripts:
+- tools.js
+---
+<section class="wrap page-head">
+  <p class="eyebrow">Free tool &middot; law reviewed 12 November 2026</p>
+  <h1>Compare surrogacy laws side by side</h1>
+  <p class="lede">Choose up to three countries. Useful when you live in one place and are considering surrogacy in another.</p>
+</section>
+<section class="wrap section" data-compare style="padding-top:16px">
+  <div class="form-card" style="margin-bottom:20px"><div class="three">
+    <label>Country 1<select aria-label="Country 1"></select></label>
+    <label>Country 2<select aria-label="Country 2"></select></label>
+    <label>Country 3<select aria-label="Country 3"></select></label>
+  </div></div>
+  <div data-compare-out aria-live="polite"><p class="muted">Loading country data...</p></div>
+</section>
+{% include lead-parents.html %}

@@ -1,0 +1,28 @@
+---
+layout: default
+title: 'Surrogacy timeline planner: how long does surrogacy take?'
+description: 'Plan your surrogacy journey on a calendar: research, embryos, matching, screening, contracts, transfer, pregnancy and parentage. Compare agency, altruistic, known-surrogate and international routes.'
+section: Tools
+section_url: /tools/
+crumb: Journey timeline
+ads: true
+sticky_cta: true
+scripts:
+- tools.js
+---
+<section class="wrap page-head">
+  <p class="eyebrow">Free tool</p>
+  <h1>Surrogacy journey timeline planner</h1>
+  <p class="lede">Pick a start month and your route. We lay out each stage with typical durations so you can plan work, savings and travel.</p>
+</section>
+<section class="wrap section" data-timeline style="padding-top:20px">
+  <div class="form-card" style="margin-bottom:22px">
+    <form novalidate onsubmit="return false" class="three">
+      <label>Start month<input type="month" name="start"></label>
+      <label>Route<select name="path"><option value="agency">US agency match</option><option value="known">Known surrogate (friend or relative)</option><option value="altruistic">Altruistic system (Canada, UK, Australia)</option><option value="international">International programme</option></select></label>
+      <label>Embryos ready?<select name="embryos"><option value="yes">Yes, frozen</option><option value="no">Not yet</option></select></label>
+    </form>
+  </div>
+  <div class="result" data-timeline-out aria-live="polite"></div>
+</section>
+{% include lead-parents.html %}
