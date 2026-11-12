@@ -1,0 +1,5 @@
+---
+layout: null
+sitemap: false
+---
+{"name":"SurroMother: The independent surrogacy navigator","short_name":"SurroMother","start_url":"{{ '/' | relative_url }}","scope":"{{ '/' | relative_url }}","display":"standalone","background_color":"#FBF7F2","theme_color":"#3A1F3D","icons":[{"src":"{{ '/assets/img/favicon.svg' | relative_url }}","sizes":"any","type":"image/svg+xml"}]}

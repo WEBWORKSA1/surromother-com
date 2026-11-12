@@ -1,0 +1,48 @@
+<section class="newsletter-band" aria-labelledby="nl-title">
+  <div class="wrap nl-grid">
+    <div>
+      <h2 id="nl-title">The SurroMother Letter</h2>
+      <p>Law changes, cost updates and new tools, twice a month. Written for intended parents and surrogates; no spam, unsubscribe anytime.</p>
+    </div>
+    <form class="nl-form" data-sm-form="newsletter" data-inline-success="You're on the list. Watch your inbox for the next letter." novalidate>
+      <label class="sr" for="nl-email">Email</label>
+      <input id="nl-email" name="email" type="email" placeholder="you@example.com" required autocomplete="email">
+      <label class="sr" for="nl-role">I am</label>
+      <select id="nl-role" name="role" aria-label="I am">
+        <option>An intended parent</option><option>Considering being a surrogate</option><option>A surrogate or former surrogate</option><option>A professional</option><option>Just curious</option>
+      </select>
+      <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button class="btn btn-coral" type="submit">Subscribe</button>
+      <p class="form-msg" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+<footer class="site-footer">
+  <div class="wrap foot-grid">
+    <div class="foot-brand">
+      <a class="brand brand-light" href="{{ site.baseurl }}/"><svg class="logo-mark" viewBox="0 0 48 48" width="42" height="42" aria-hidden="true" focusable="false"><circle cx="24" cy="24" r="23" fill="#F7D9C9"/><path d="M9 21.5c0 9.4 6.7 16 15 16s15-6.6 15-16" fill="none" stroke="#3A1F3D" stroke-width="4.2" stroke-linecap="round"/><path d="M15.4 22c0 5.4 3.8 9 8.6 9s8.6-3.6 8.6-9" fill="none" stroke="#E2674A" stroke-width="4.2" stroke-linecap="round"/><circle cx="24" cy="14.2" r="4.6" fill="#C9952F"/></svg><span class="brand-text"><span class="brand-name">Surro<b>Mother</b></span><span class="brand-tag">The independent surrogacy navigator</span></span></a>
+      <p>Independent information and free tools for intended parents and gestational surrogates in 48 countries. Not an agency, clinic or law firm.</p>
+      <p class="foot-cta"><a class="btn btn-coral btn-sm" href="{{ site.baseurl }}/support.html">Support our work</a> <a class="btn btn-ghost-light btn-sm" href="{{ site.baseurl }}/contact.html">Contact</a></p>
+    </div>
+    <div class="foot-col">
+      <h3>Intended parents</h3>
+      <ul><li><a href="{{ site.baseurl }}/intended-parents.html">Start here</a></li><li><a href="{{ site.baseurl }}/get-matched.html">Get matched</a></li><li><a href="{{ site.baseurl }}/tools/cost-calculator.html">Cost calculator</a></li><li><a href="{{ site.baseurl }}/tools/journey-timeline.html">Journey timeline</a></li><li><a href="{{ site.baseurl }}/tools/agency-checklist.html">Agency checklist</a></li></ul>
+    </div>
+    <div class="foot-col">
+      <h3>Surrogates</h3>
+      <ul><li><a href="{{ site.baseurl }}/become-a-surrogate.html">Become a surrogate</a></li><li><a href="{{ site.baseurl }}/apply.html">Am I eligible?</a></li><li><a href="{{ site.baseurl }}/guides/surrogate-requirements.html">Requirements</a></li><li><a href="{{ site.baseurl }}/guides/surrogate-medical-process.html">Medical process</a></li><li><a href="{{ site.baseurl }}/tools/due-date-calculator.html">Due date calculator</a></li></ul>
+    </div>
+    <div class="foot-col">
+      <h3>Laws and learning</h3>
+      <ul><li><a href="{{ site.baseurl }}/laws/">Global law tracker</a></li><li><a href="{{ site.baseurl }}/laws/us-states.html">US state guide</a></li><li><a href="{{ site.baseurl }}/guides/">Guides</a></li><li><a href="{{ site.baseurl }}/videos.html">Videos</a></li><li><a href="{{ site.baseurl }}/news.html">News</a></li><li><a href="{{ site.baseurl }}/glossary.html">Glossary</a></li></ul>
+    </div>
+    <div class="foot-col">
+      <h3>SurroMother</h3>
+      <ul><li><a href="{{ site.baseurl }}/about.html">About</a></li><li><a href="{{ site.baseurl }}/editorial-policy.html">Editorial policy</a></li><li><a href="{{ site.baseurl }}/partners.html">Partners</a></li><li><a href="{{ site.baseurl }}/advertise.html">Advertise</a></li><li><a href="{{ site.baseurl }}/support.html">Support us</a></li><li><a href="{{ site.baseurl }}/contests.html">Contests</a></li><li><a href="{{ site.baseurl }}/careers.html">Careers</a></li><li><a href="{{ site.baseurl }}/contact.html">Contact</a></li></ul>
+    </div>
+  </div>
+  <div class="wrap foot-legal">
+    <p><strong>Important:</strong> SurroMother provides general information only. It is not medical, legal, financial or immigration advice, and SurroMother does not arrange surrogacy, recruit or pay surrogates, or hold client funds. Surrogacy law differs by country and state and changes often; always consult licensed professionals in every jurisdiction involved.</p>
+    <p>&copy; {{ site.time | date: '%Y' }} SurroMother.com. "SurroMother" is used as the descriptive name of this website and domain; all other trademarks belong to their owners. <a href="{{ site.baseurl }}/disclaimer.html">Disclaimer &amp; trademark notice</a> &middot; <a href="{{ site.baseurl }}/privacy.html">Privacy</a> &middot; <a href="{{ site.baseurl }}/terms.html">Terms</a> &middot; <a href="{{ site.baseurl }}/editorial-policy.html">Editorial policy</a> &middot; <a href="{{ site.baseurl }}/sitemap.xml">Sitemap</a></p>
+  </div>
+</footer>

@@ -1,0 +1,57 @@
+---
+layout: default
+---
+{% assign c = site.data.countries.countries | where: "slug", page.slug | first %}
+{% assign labels = site.data.countries.status_labels %}
+<article class="article">
+  <header class="article-head wrap-narrow">
+    <p class="kicker">Law tracker &middot; {{ c.region }}</p>
+    <h1>Surrogacy in {{ c.the_name }}</h1>
+    <p class="lede">{{ c.summary }}</p>
+    <p class="byline"><span class="badge st-{{ c.status }}">{{ labels[c.status] }}</span> &nbsp;Reviewed {{ site.law_reviewed }}</p>
+  </header>
+  <div class="wrap-narrow">
+    <div class="fact-grid">
+      <div class="fact"><span>Status</span><strong>{{ labels[c.status] }}</strong></div>
+      <div class="fact"><span>Paying a surrogate</span><strong>{{ c.compensation }}</strong></div>
+      <div class="fact"><span>Foreign intended parents</span><strong>{{ c.foreigners }}</strong></div>
+      <div class="fact"><span>Same-sex couples</span><strong>{{ c.same_sex }}</strong></div>
+      <div class="fact"><span>Single parents</span><strong>{{ c.singles }}</strong></div>
+      <div class="fact"><span>Risk level</span><strong>{{ c.risk }}</strong></div>
+    </div>
+    <div class="prose">
+      <h2>How legal parenthood is established</h2>
+      <p>{{ c.parentage }}.</p>
+      <h2>Key law</h2>
+      <p>{{ c.key_law }}.</p>
+      {% if c.recent != "" %}
+      <h2>Latest change{% if c.recent_month != "" %} <span class="muted">({{ c.recent_month }})</span>{% endif %}</h2>
+      <p>{{ c.recent }}</p>
+      {% endif %}
+      {% if c.cost != "" %}
+      <h2>Indicative total cost</h2>
+      <p>Typical total for intended parents: <strong>{{ c.cost }}</strong>, depending on embryos, insurance, legal steps and travel. {% if c.calc != "" %}<a href="{{ '/tools/cost-calculator.html' | relative_url }}?d={{ c.calc }}">Build an itemised estimate for {{ c.the_name }}</a>.{% endif %}</p>
+      {% endif %}
+      {% if c.status == "altruistic" or c.status == "prohibited" or c.status == "residents" %}
+      <aside class="note note-warn"><p><strong>Payment rules matter.</strong> In {{ c.the_name }}, {% if c.status == "prohibited" %}surrogacy agreements are not permitted. Arranging, advertising or paying for surrogacy can carry legal consequences, and families created abroad may face recognition problems at home.{% elsif c.status == "altruistic" %}a surrogate may not be paid beyond allowed expenses. Arranging or advertising paid surrogacy can be an offence.{% else %}access is limited to residents or citizens under specific conditions.{% endif %} Speak to a local family lawyer before taking any step.</p></aside>
+      {% endif %}
+      <h2>Before you decide</h2>
+      <ul>
+        <li>Check the law in three places: where you live, where the surrogate lives and where the baby will be born.</li>
+        <li>Ask an immigration lawyer how your child will get citizenship and a passport.</li>
+        <li>Use an independent escrow service and keep every document.</li>
+        <li>Compare at least two destinations with the <a href="{{ '/tools/compare.html' | relative_url }}?c={{ c.slug }}">country comparison tool</a>.</li>
+      </ul>
+      <h2>Sources</h2>
+      <ul class="sources">{% for k in c.src %}{% assign s = site.data.countries.sources[k] %}<li><a href="{{ s.url }}" target="_blank" rel="noopener">{{ s.title }}</a></li>{% endfor %}</ul>
+      <p class="disclaimer-inline">Summary for orientation only, not legal advice. Laws change quickly; confirm with a lawyer licensed in {{ c.the_name }}. Spotted an update? <a href="{{ '/contact.html' | relative_url }}?topic=law-update">Tell us</a>.</p>
+    </div>
+  </div>
+</article>
+{% include lead-parents.html %}
+<section class="wrap section">
+  <h2 class="section-title">Other countries in {{ c.region }}</h2>
+  {% assign others = site.data.countries.countries | where: "region", c.region %}
+  <ul class="chip-list">{% for o in others %}{% unless o.slug == c.slug %}<li><a class="chip" href="{{ '/laws/' | append: o.slug | append: '.html' | relative_url }}"><span class="dot st-{{ o.status }}"></span>{{ o.name }}</a></li>{% endunless %}{% endfor %}</ul>
+  <p><a class="btn btn-line" href="{{ '/laws/' | relative_url }}">See all {{ site.data.countries.countries | size }} countries</a></p>
+</section>

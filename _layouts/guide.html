@@ -1,0 +1,40 @@
+---
+layout: default
+---
+<article class="article">
+  <header class="article-head wrap-narrow">
+    <p class="kicker">{{ page.category }} &middot; For {{ page.audience }}</p>
+    <h1>{{ page.title }}</h1>
+    <p class="lede">{{ page.description }}</p>
+    <p class="byline">By the SurroMother editorial team &middot; Reviewed {{ page.reviewed_fmt }} &middot; {{ page.read_time }} min read</p>
+  </header>
+  <div class="article-layout wrap">
+    <aside class="toc" aria-label="On this page">
+      <p class="toc-title">On this page</p>
+      <ol>{% for t in page.toc %}<li><a href="#{{ t[0] }}">{{ t[1] }}</a></li>{% endfor %}{% if page.faq %}<li><a href="#faq">Questions</a></li>{% endif %}</ol>
+      {% if page.tool %}<a class="toc-tool" href="{{ page.tool[1] | relative_url }}"><span>Try the tool</span><strong>{{ page.tool[0] }}</strong></a>{% endif %}
+    </aside>
+    <div class="prose">
+      {{ content }}
+      {% if page.faq %}
+      <h2 id="faq">Questions people ask</h2>
+      <div class="accordion">
+        {% for q in page.faq %}<details><summary>{{ q[0] }}</summary><p>{{ q[1] }}</p></details>
+        {% endfor %}
+      </div>
+      {% endif %}
+      {% if page.sources %}
+      <h2 id="sources">Sources</h2>
+      <ul class="sources">{% for s in page.sources %}<li><a href="{{ s[1] }}" target="_blank" rel="noopener">{{ s[0] }}</a></li>{% endfor %}</ul>
+      {% endif %}
+      <p class="disclaimer-inline">This guide is general information, not medical, legal or financial advice. Laws and prices change; confirm details with licensed professionals in every jurisdiction involved. Spotted an error? <a href="{{ '/contact.html' | relative_url }}?topic=correction">Tell us</a>.</p>
+    </div>
+  </div>
+</article>
+{% if page.lead == "parents" %}{% include lead-parents.html %}{% elsif page.lead == "surrogates" %}{% include lead-surrogates.html %}{% else %}{% include lead-both.html %}{% endif %}
+<section class="wrap section">
+  <h2 class="section-title">Keep reading</h2>
+  <div class="grid-3">
+    {% for r in page.related %}{% include guide-card.html title=r.title url=r.url category=r.category read_time=r.read_time description=r.description %}{% endfor %}
+  </div>
+</section>

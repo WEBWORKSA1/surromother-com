@@ -1,0 +1,3 @@
+{%- for it in site.data.news.items limit: include.max %}
+<li><time datetime="{{ it.date }}">{{ it.date | date: "%-d %b %Y" }}</time><div><a href="{{ it.url }}" target="_blank" rel="noopener">{{ it.title | escape }}</a><span class="src">{{ it.source | escape }}</span></div></li>
+{%- endfor %}

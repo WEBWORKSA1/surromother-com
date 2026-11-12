@@ -1,0 +1,5 @@
+---
+layout: null
+sitemap: false
+---
+[{% for p in site.html_pages %}{% unless p.noindex or p.title == nil %}{"t":{{ p.title | jsonify }},"u":{{ p.url | relative_url | jsonify }},"d":{{ p.description | truncate: 160 | jsonify }},"k":{{ p.section | default: "Page" | jsonify }}},{% endunless %}{% endfor %}{% for g in site.data.glossary %}{% assign gs = g[0] | slugify %}{"t":{{ g[0] | jsonify }},"u":{{ '/glossary.html' | relative_url | append: '#' | append: gs | jsonify }},"d":{{ g[1] | truncate: 160 | jsonify }},"k":"Glossary"}{% unless forloop.last %},{% endunless %}{% endfor %}]

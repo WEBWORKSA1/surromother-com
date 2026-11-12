@@ -1,0 +1,9 @@
+---
+layout: null
+sitemap: false
+---
+User-agent: *
+Allow: /
+Disallow: {{ '/thank-you.html' | relative_url }}
+
+Sitemap: {{ '/sitemap.xml' | absolute_url }}

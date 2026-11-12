@@ -1,11 +1,15 @@
-# SurroMother.com on GitHub Pages (free plan, branch main, folder /).
-# The site is pre-built to plain HTML by build.py; Jekyll only copies files.
-# Folders starting with "_" (such as _src) are never published.
+# SurroMother.com: built by GitHub Pages itself (free plan, branch main, folder /).
+# For the custom domain set url: "https://surromother.com" and baseurl: "".
 title: SurroMother
+tagline: The independent surrogacy navigator
+url: "https://webworksa1.github.io"
+baseurl: "/surromother-com"
+owner_contact: "https://web.works/contact"
+law_reviewed: "12 November 2026"
+plugins:
+  - jekyll-sitemap
 exclude:
   - README.md
   - PROMPTS.md
   - RESEARCH.md
-  - build.py
-  - requirements.txt
   - automation
