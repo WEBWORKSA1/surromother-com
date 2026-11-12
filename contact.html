@@ -1,0 +1,40 @@
+---
+layout: default
+title: Contact SurroMother
+description: Contact SurroMother with questions, corrections, law updates, media or partnership enquiries. We reply within 1-2 business days.
+section: SurroMother
+section_url: /about.html
+crumb: Contact
+ads: true
+sticky_cta: true
+---
+<section class="wrap section">
+  <div class="split">
+    <div>
+      <p class="eyebrow">Contact</p>
+      <h1>Talk to us</h1>
+      <p class="lede">We read every message and reply <span data-reply-time>within 1-2 business days</span>.</p>
+      <ul class="trust-list">
+        <li><span><strong>Planning a journey?</strong> The <a href="{{ site.baseurl }}/get-matched.html">consultation request</a> gets you a faster, more useful answer.</span></li>
+        <li><span><strong>Considering surrogacy?</strong> Start with the <a href="{{ site.baseurl }}/apply.html">2-minute pre-screen</a>.</span></li>
+        <li><span><strong>Found an error or a law change?</strong> Choose "Correction" or "Law update" and include your source.</span></li>
+        <li><span><strong>Interested in this website, domain, sponsorship, advertising or partnership?</strong> <a href="https://web.works/contact" target="_blank" rel="noopener">Contact the owner directly</a>.</span></li>
+      </ul>
+      <p>Prefer email? <a href="{{ site.baseurl }}/contact.html" data-mail="SurroMother enquiry">Email us</a>.</p>
+      <aside class="note note-warn"><p><strong>Medical emergency?</strong> Call your local emergency number or go to the nearest hospital. We can't give medical or legal advice.</p></aside>
+    </div>
+    <div class="form-card">
+      <form data-sm-form="contact" data-subject="Contact" data-inline-success="Thank you. Your message is on its way and we'll reply within 1-2 business days." novalidate>
+        <div class="two"><label>Name<input name="name" type="text" required autocomplete="name"></label><label>Email<input name="email" type="email" required autocomplete="email"></label></div>
+        <label>Topic<select name="topic" data-prefill="topic">
+          <option value="question">General question</option><option value="correction">Correction</option><option value="law-update">Law update</option><option value="media">Media / press</option><option value="partnership">Partnership or advertising</option><option value="contest">Contest</option><option value="privacy">Privacy request</option><option value="other">Something else</option>
+        </select></label>
+        <label>Message<textarea name="message" rows="6" required></textarea></label>
+        <label class="check"><input type="checkbox" name="consent" value="Yes" required> <span>I agree to the <a href="{{ site.baseurl }}/privacy.html" target="_blank">privacy policy</a>.</span></label>
+        <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button class="btn btn-coral" type="submit">Send message</button>
+        <p class="form-msg" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+</section>
