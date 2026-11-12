@@ -1,0 +1,21 @@
+---
+layout: default
+title: Surrogacy news and law updates
+description: 'The latest surrogacy news from around the world: law changes, court rulings, policy debates and industry developments, refreshed automatically every day.'
+section: Learn
+section_url: /guides/
+crumb: News
+ads: true
+sticky_cta: true
+---
+<section class="wrap page-head">
+  <p class="eyebrow">Updated automatically &middot; last refresh <span data-news-updated>{{ site.data.news.updated }}</span></p>
+  <h1>Surrogacy news</h1>
+  <p class="lede">Headlines from publishers worldwide, refreshed daily. Links open the original publisher; we don't republish articles.</p>
+</section>
+<section class="wrap-narrow section" style="padding-top:16px">
+  <ul class="news-list" data-news="20">{% include news-items.html max=20 %}
+</ul>
+  <aside class="note note-info"><p><strong>What changed in the law?</strong> We turn news into plain-language updates in the <a href="{{ site.baseurl }}/laws/#changes">law tracker</a>, with the date of each change.</p></aside>
+</section>
+{% include lead-both.html %}
